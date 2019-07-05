@@ -1,0 +1,12 @@
+extends templates/layout
+
+block content
+  h1="🎬Edit Movie"
+  .form__container
+    form(action=`/${movie.id}/edit`, method="POST")
+      input(type="text" name="title" placeholder="Title" value=movie.title)
+      textarea(name="synopsis", placeholder="Synopsis")=movie.synopsis
+      input(type="text" name="genres" placeholder="Genre")
+      input(type="text" name="year" placeholder="Year" value=movie.year)
+      input(type="text" name="rating" placehlder="Rating" value=movie.rating)
+      input(type="submit" value="Update Movie")

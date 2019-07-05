@@ -1,0 +1,16 @@
+extends templates/layout
+
+block content
+  ul
+    li
+      a(href=`/${movie._id}/edit`) Edit
+    li
+      a(href=`/${movie._id}/delete`) Delete
+  h1 #{movie.title} (#{movie.year})
+  p User Score : #{movie.rating} / #{MaxRating}
+  h3 Overview
+  p=movie.synopsis
+  h3 Genres
+  ul
+    each genre in movie.genres
+      li=genre

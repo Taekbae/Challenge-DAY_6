@@ -1,0 +1,12 @@
+extends templates/layout
+
+block content
+  h1="🎬Create Movie"
+  .form__container
+    form(action="/create", method="POST")
+      input(type="text" name="title" placeholder="Title")
+      textarea(name="synopsis", placeholder="Synopsis")
+      input(type="text" name="genre" placeholder="Genre")
+      input(type="text" name="year" placeholder="Year")
+      input(type="text" name="rating" placeholder="Rating")
+      input(type="submit" value="Create Movie")

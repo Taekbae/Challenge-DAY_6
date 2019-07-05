@@ -1,0 +1,17 @@
+extends templates/layout
+include mixins/movie
+
+block content
+    .search__header
+        if (searchYear)
+            h3 Searching by year : #{searchYear}
+        if (searchRating)
+            h3 Searching by rating : #{searchRating}
+    .search__videos
+        if movies.length === 0
+            h5 No Movies Found
+        each item in movies
+            +movieMixin({
+                title:item.title,
+                id:item.id
+            })
